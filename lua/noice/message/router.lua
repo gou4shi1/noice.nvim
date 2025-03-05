@@ -223,7 +223,7 @@ function M.update()
 
   if not vim.tbl_isempty(updates) then
     Util.stats.track("router.update.updated")
-    Util.redraw()
+    Util.redraw({ flush = not Util.is_search() })
   end
 
   M._updating = false
